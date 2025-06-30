@@ -10,12 +10,11 @@ name: 'Execução por Deploy'
 
 on:
   workflow_run:
-  # Definindo qual pipeline monitorar
+    # Definindo qual pipeline monitorar
     workflows: ['Execução Manual']
     # Executar após
     types:
       - completed
-
 
 # Tarefas dentro do Pipeline = jobs
 
@@ -27,7 +26,7 @@ jobs:
 
     #condicional - if
     # `${ expressao }`
-    # == comparação 
+    # == comparação
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
@@ -59,6 +58,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
-        with: 
+        with:
           name: relatorio
           path: ./playwright-report

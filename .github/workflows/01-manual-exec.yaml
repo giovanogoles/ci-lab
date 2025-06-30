@@ -8,7 +8,7 @@ name: 'Execução Manual'
 # Gatilho de exec manual = workflow_dispatch
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 # Tarefas dentro do Pipeline = jobs
 
