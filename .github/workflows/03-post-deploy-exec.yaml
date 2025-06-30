@@ -25,6 +25,12 @@ jobs:
     #github.com/actions//runner-images
     runs-on: ubuntu-latest
 
+    #condicional - if
+    # `${ expressao }`
+    # == comparação 
+
+    if: ${{ github.event.workflow_run.conclusion == 'Success' }}
+
     # passos do script de build
     steps:
       # clone do projeto
